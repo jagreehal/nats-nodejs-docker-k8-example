@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nats-producer
+spec:
+  ports:
+    - port: 8081
+  type: NodePort
+  selector:
+    app: nats-producer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nats-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nats-producer
+  template:
+    metadata:
+      labels:
+        app: nats-producer
+    spec:
+      containers:
+        - name: nats-producer
+          image: nats-producer
+          ports:
+            - containerPort: 8081
+          imagePullPolicy: IfNotPresent

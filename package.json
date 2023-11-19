@@ -1,0 +1,26 @@
+{
+  "name": "nats-nodejs-docker-k8-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "skaffold dev",
+    "local:dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "install:infra": "./scripts/infra.sh"
+  },
+  "devDependencies": {
+    "eslint": "8.54.0",
+    "prettier": "^3.1.0",
+    "turbo": "^1.10.16"
+  },
+  "keywords": [
+    "nats",
+    "skaffold",
+    "nodejs",
+    "typescript"
+  ],
+  "author": "Jag Reehal",
+  "license": "ISC"
+}

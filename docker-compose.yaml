@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  nats:
+    image: nats:2.10.5-alpine
+    container_name: nats-server
+    command: -DV
+    ports:
+      - '4222:4222' # Client connections
+      - '6222:6222' # Route connections
+      - '8222:8222' # HTTP monitoring
